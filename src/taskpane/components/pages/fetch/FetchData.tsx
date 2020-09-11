@@ -24,10 +24,14 @@ export const FetchData: React.FC = () => {
       }
     };
 
-    axios
-      .post(process.env.API_URL, qs.stringify(requestBody), config)
+    fetch("https://jsonplaceholder.typicode.com/todos/1")
       .then(response => response.json())
-      .then(data => setResponseData(data));
+      .then(data => setResponseData(data.title));
+
+    // axios
+    //   .post(process.env.API_URL, qs.stringify(requestBody), config)
+    //   .then(response => response.json())
+    //   .then(data => setResponseData(data));
   };
 
   return (
