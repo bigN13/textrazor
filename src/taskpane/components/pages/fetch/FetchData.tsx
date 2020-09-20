@@ -10,6 +10,17 @@ export const FetchData: React.FC = () => {
   );
   const [responseData, setResponseData] = React.useState("");
 
+  const h1Styles = {
+    backgroundColor: "rgba(255, 255, 255, 0.85)",
+    right: 0,
+    bottom: "2rem",
+    padding: "0.5rem",
+    fontFamily: "sans-serif",
+    fontSize: "1.5rem",
+    fontColor: "black",
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)"
+  };
+
   const handleFetchData = async () => {
     const requestBody = {
       extractors: { extractors },
@@ -59,7 +70,7 @@ export const FetchData: React.FC = () => {
       >
         Fetch Data
       </Button>
-      <TextField label="Result" multiline rows={5} disabled value={responseData} />
+      <TextField style={h1Styles} label="Result" multiline rows={5} disabled value={responseData} />
     </>
   );
 };
